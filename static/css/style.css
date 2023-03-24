@@ -14,7 +14,7 @@
     margin-right: 20px;
 }
 html{
-    background-color: #A1CAFE;
+    background-color: rgba(62, 101, 84, 1);
 }
 /*  #a1caff */
 body{
@@ -41,7 +41,7 @@ body a {
   }
 
   .navbar ul li {
-    color: :#315B49;
+    color: #315B49;
  }
 
   #navbarNav a{
