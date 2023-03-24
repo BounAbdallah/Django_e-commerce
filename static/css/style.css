@@ -1,0 +1,141 @@
+.section_1{
+    background: rgba(86, 74, 226, 1);
+    border: 20px whitesmoke;
+}
+.section_2{
+    background-color: #315B49;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+.carte_1{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+html{
+    background-color: #A1CAFE;
+}
+/*  #a1caff */
+body{
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #315B49;
+}
+body a {
+    color: #315B49;
+}
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .navbar-brand{
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 54px;
+    color: #315B49;
+
+  }
+
+  .navbar ul li {
+    color: :#315B49;
+ }
+
+  #navbarNav a{
+    color: #315B49;
+    font-family: 'Russo One';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 40px;
+
+
+  }
+.section_1{
+    background:#A1CAFE;
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+
+}
+
+.container{
+    margin-top: 05px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 10 10 10 10;
+}
+.card-title{
+    color: #315B49;
+    font-family: 'Salsa';
+font-style: normal;
+font-weight: 400;
+font-size: 37px;
+line-height: 45px;
+text-align: center;
+}
+
+.div_0{
+    background-color: white;
+}
+.btn_env{
+    color: #ffffff;
+    background-color: #315B49;
+}
+
+.nous{
+    font-family: 'Salsa';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 40px;
+text-align: center;
+}
+.cart_{
+    font-family: 'Salsa';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 40px;
+text-align: center;
+}
+.cart_3{
+    font-family: 'Salsa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+footer{
+    font-family: 'Salsa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    
+    
+}
+.section_produits{
+    text-align: center;
+
+}
+.section_produits {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #315B49;
+    color: #ffffff;
+}
+.navi{
+    background-color: #315B49;
+}

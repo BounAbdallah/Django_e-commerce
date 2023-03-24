@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ 
+<div class="cart_3 container mt-5">
+     <div class="row">
+         <h2 class="text-center mb-4"> Mon panier </h2>
+         
+         {% if cart %}
+         <div class="table-responsive">
+             <table class="table table-striped">
+                 <thead>
+                     <tr>
+                         <th scope="col">Produit</th>
+                         <th scope="col">Quantité</th>
+                         <th scope="col">Retirer</th>
+                         <th scope="col">Prix unitaire</th>
+                         <th scope="col">Prix total</th>
+                         
+                     </tr>
+                 </thead>
+                 <tbody>
+                     {% for item in cart %}
+                     {% with product=item.product %}
+                     <tr>
+                         <td>{{ product.name }}</td>
+                         <td>
+                             <form action="{% url 'cart_add' product.id %}" method="post" class="d-flex justify-content-center align-items-center">
+                                 {% csrf_token %}
+                                 {{ item.update_quantity_form.quantity }}
+                                 {{ item.update_quantity_form.override }}
+                                 <button class="btn btn-outline-primary ms-2 ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-repeat-1" viewBox="0 0 16 16">
+                                    <path d="M11 4v1.466a.25.25 0 0 0 .41.192l2.36-1.966a.25.25 0 0 0 0-.384l-2.36-1.966a.25.25 0 0 0-.41.192V3H5a5 5 0 0 0-4.48 7.223.5.5 0 0 0 .896-.446A4 4 0 0 1 5 4h6Zm4.48 1.777a.5.5 0 0 0-.896.446A4 4 0 0 1 11 12H5.001v-1.466a.25.25 0 0 0-.41-.192l-2.36 1.966a.25.25 0 0 0 0 .384l2.36 1.966a.25.25 0 0 0 .41-.192V13h6a5 5 0 0 0 4.48-7.223Z"/>
+                                    <path d="M9 5.5a.5.5 0 0 0-.854-.354l-1.75 1.75a.5.5 0 1 0 .708.708L8 6.707V10.5a.5.5 0 0 0 1 0v-5Z"/>
+                                  </svg></button>
+                             </form>
+                         </td>
+                         <td>
+                             <form action="{% url 'cart_remove' product.id  %}" method="post" class="d-flex justify-content-center align-items-center">
+                                 {% csrf_token %}
+                                 <button class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                  </svg></button>
+                             </form>
+                         </td>
+                         <td>{{ item.price }}</td>
+                         <td>{{ item.total_price }}</td>
+                         <td><a href="{{ product.get_absolute_url }}"><i class="bi bi-eye"></i></a></td>     
+                     </tr>
+                     {% endwith %} 
+                     {% endfor %}
+                 </tbody>
+             </table>
+         </div>
+         <div class="d-flex justify-content-end">
+             <a href="{% url 'Order_create' %}" class="btn_env btn  col-md-12">Valider la commande</a>
+         </div>
+         {% else %}
+         <br>
+         <br>
+         <br>
+         <br>
+         <div class="text-center">
+             <h2>Votre panier est vide !</h2>
+             <a href="{% url 'product-list' %}" class="btn btn-primary mt-3">Continuer mes achats</a>
+         </div>
+         {% endif %}
+     </div>
+ </div>
+
+
+ {% endblock %}
+    

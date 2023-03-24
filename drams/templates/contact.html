@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class=" nous col-md-6">
+      <h2 id="nous">À propos de nous</h2>
+      <p>Bienvenue sur notre site de vente en ligne spécialisé dans les téléphones portables venant des États-Unis et les vêtements pour hommes et femmes. Nous sommes ravis de vous proposer une large sélection de produits de qualité supérieure à des prix abordables.</p>
+      <p>Si vous êtes à la recherche d'un téléphone portable haut de gamme provenant des États-Unis, vous êtes au bon endroit. Nous avons une variété de marques populaires telles que Apple, Samsung, LG et bien plus encore. Tous nos téléphones sont authentiques et déverrouillés pour une utilisation avec n'importe quel opérateur.</p>
+      <p>En plus des téléphones portables, nous proposons également une large gamme de vêtements pour hommes et femmes. Que vous recherchiez une robe élégante, un djilbaab traditionnel ou simplement des vêtements décontractés pour tous les jours, nous avons ce qu'il vous faut. Nous sommes fiers de proposer des vêtements de haute qualité à des prix abordables.</p>
+      <p>Chez nous, vous pouvez commander en toute confiance. Nous proposons des paiements à la livraison pour votre commodité et votre tranquillité d'esprit. De plus, nous offrons une garantie de satisfaction à 100% sur tous nos produits.</p>
+      <p>Nous sommes heureux de vous servir et de répondre à toutes vos questions. N'hésitez pas à parcourir notre sélection de produits et à passer votre commande dès maintenant. Merci d'avoir choisi notre site de vente en ligne pour tous vos besoins en matière de téléphones portables et de vêtements.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Contactez-nous</h2>
+      <form action="#" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Nom :</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre mail" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Entrez votre message" required></textarea>
+        </div>
+        <button type="submit" class="btn_env btn  col-md-12">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com

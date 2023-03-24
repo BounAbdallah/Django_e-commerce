@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<section>
+  <h2 class="text-center mt-3 mb-3">{{ product.fabriquant }}</h2>
+  <section class="d-flex justify-content-between flex-wrap">
+    <div class="col-md-5 mb-3">
+      <img class="card-img img-fluid" src="{{ product.image.url }}" alt="Card image cap" id="product-detail">
+    </div>
+    <div class="col-md-7 mt-5">
+      <div class=" cart_ card">
+        <div class="card-body">
+          <h1 class="h2">{{ product.name }}</h1>
+          <p class="h3 py-2">{{ product.price }} fcfa</p>
+          <h6>Description:</h6>
+          <p>{{ product.description }}</p>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">{{ product.info_produit }}</p>
+          </div>
+    
+          <div class="row pb-3">
+            <div class="col d-grid">
+              <form action="{% url 'cart_add' product.id %}" method="post">
+                {% csrf_token %}
+                {{ cart_product_form }}
+                <button type="submit" class="btn_env btn  col-md-12 btn-lg mt-3" name="submit" value="addtocard">
+                  <iconify-icon icon="mdi:cart-arrow-down" style="color: aliceblue;" width="50" height="50"></iconify-icon>
+                </button>
+              </form>
+            </div>
+          </div>
+    
+          <p class="mt-4">{{ product.fabriquant }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="col-12 card mt-5">
+    <div class="card-body">
+      <h5 class="card-title">Commentaires et avis des clients</h5>
+      {% if product.comments.count > 0 %}
+        {% for comment in product.comments.all %}
+          <div class="card mt-3">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">{{ comment.author }} - {{ comment.date }}</h6>
+              <p class="card-text">{{ comment.body }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+      <div class="card mt-3">
+        <div class="card-header">
+            Comments
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for comment in comments %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <h6 class="mb-0">{{ comment.user_name }}</h6>
+                    <small class="text-muted">{{ comment.created_at }}</small>
+                </div>
+                <p class="mt-2">{{ comment.content }}</p>
+            </li>
+            {% empty %}
+            <li class="list-group-item">No comments yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+            {% endif %}
+    </div>
+  </div> 
+
+
+   
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="row" style="background:rgb(62, 101, 84, 1)">    
+    <div class="col-md-8 mx-auto mb-3 mt-3">
+        <form class="card card-sm">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col">
+                   <input type="search" placeholder="Entrez le nom du produit que vous cherchez " name="q" class="form-control form-control-borderless">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success">Recherche</button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+<section class="m-5" style="background:rgba(62, 101, 84, 1)">
+    <h2 class="text-center mt-5 mb-5" style="background:rgba(217, 217, 217, 1);color:rgb(62,101,84,1)">Le meilleur de la région 😇</h2>
+    <div class="row ml-5">
+        {% if products %} 
+
+        {% for product in products %}
+        <div class="  col-md-4">
+            <div class="card text-warning mb-3" style="max-width: 19rem;">
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <a href="{{ product.get_absolute_url }}" class="">
+                        <img src="{{ product.image.url }}" class="card-img-top btn" alt="{{ product.name }}">
+                    </a>
+                </div> 
+                   <div class="card-header bg-transparent border-0">{{ product.category.name }}</div>
+
+            </div>
+        </div>
+        {% endfor %}
+    
+        {% else %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center" style="color:rgba(217, 217, 217, 1)">
+                <h2 class="mb-3"> Désolé 😣! Ce produit manque dans notre stock !</h2>
+                <h2 class="mb-5">Veuillez rechercher un autre produit 🔍</h2>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+    
+
+{% endblock %} 
