@@ -40,7 +40,7 @@ def payment_process(request):
             return redirect(response.get("response_text"))
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-        return HttpResponse("<h2>Le compte n'est pas encore active</h2> ")
+        return HttpResponse("<h2>Votre commande a etait envoyer,nous vous contacterons pour plus de details </h2> ")
 
 
 def payment_done(request):
