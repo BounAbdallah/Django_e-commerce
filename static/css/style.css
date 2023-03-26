@@ -3,7 +3,7 @@
     border: 20px whitesmoke;
 }
 .section_2{
-    background-color: #315B49;
+    background-color: rgba(151, 178, 223, 1);
     margin-right: 15px;
     margin-left: 15px;
     margin-top: 30px;
@@ -14,16 +14,17 @@
     margin-right: 20px;
 }
 html{
-    background-color: rgba(62, 101, 84, 1);
+    background-color:  rgba(151, 178, 223, 1);
+
 }
 /*  #a1caff */
 body{
     margin-left: 40px;
     margin-right: 40px;
-    color: #315B49;
+    color: #19488E;
 }
 body a {
-    color: #315B49;
+    color: #19488E;
 }
 .carousel-item img {
     height: 400px;
@@ -36,16 +37,16 @@ body a {
     font-weight: 400;
     font-size: 45px;
     line-height: 54px;
-    color: #315B49;
+    color: #19488E;
 
   }
 
   .navbar ul li {
-    color: #315B49;
+    color: #19488E;
  }
 
   #navbarNav a{
-    color: #315B49;
+    color: #19488E;
     font-family: 'Russo One';
 font-style: normal;
 font-weight: 400;
@@ -71,7 +72,7 @@ line-height: 40px;
     border: 10 10 10 10;
 }
 .card-title{
-    color: #315B49;
+    color: #19488E;
     font-family: 'Salsa';
 font-style: normal;
 font-weight: 400;
@@ -85,7 +86,7 @@ text-align: center;
 }
 .btn_env{
     color: #ffffff;
-    background-color: #315B49;
+    background-color: #19488E;
 }
 
 .nous{
@@ -133,9 +134,13 @@ footer{
     margin-left: 15px;
     display: flex;
     justify-content: center;
-    background-color: #315B49;
+    background-color: #19488E;
     color: #ffffff;
 }
 .navi{
-    background-color: #315B49;
+    background-color: #19488E;
+}
+.btn_recherche{
+    background-color: #19488E;
+    color: #ffffff;
 }
